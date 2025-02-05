@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+#maispq {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    margin: 30px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #4CAF50;
+    color: white;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 60%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icons a i {
+    font-size: 20px;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.plant-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.plant-list::-webkit-scrollbar {
+    height: 8px;
+}
+
+.plant-list::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border-radius: 10px;
+}
+
+.plant-card {
+    min-width: 200px;
+    max-width: 200px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.plant-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.plant-info {
+    padding: 10px;
+}
+
+.plant-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.plant-desc {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
