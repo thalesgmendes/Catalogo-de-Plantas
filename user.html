@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabeçalho</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #107d47;">
+        <a class="navbar-brand" href="#">Eden</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Jardim<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">User</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <div class="container mt-4">
+        <!-- Seção Meus Dados -->
+        <div class="card p-3">
+            <h3 class="mb-3">MEUS DADOS</h3>
+            <div class="d-flex align-items-center">
+                <img src="/icons/perfil.jpeg" class="rounded-circle mr-3" alt="Foto do Usuário">
+                <div>
+                    <h5>Nome do Usuário</h5>
+                    <p>Email: usuario@email.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Espaço Jardim -->
+        <div class="mt-4 p-3 bg-light text-center">
+            <div class="p-3 mb-2 bg-success text-white">
+                <h4>JARDIM</h4>
+            </div>
+            <button type="button" class="btn btn-success">Adicionar Planta</button>
+        </div>
+        
+        <!-- Seção de Plantas -->
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/planta.jpeg" class="card-img-top img-fluid" alt="a">
+                    <div class="card-body">
+                        <h5 class="card-title">Planta 1</h5>
+                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt error quidem odio, quisquam facere, nobis nihil minima, non mollitia autem maiores. Harum amet eos adipisci eaque enim, eligendi atque totam.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/planta.jpeg" class="card-img-top img-fluid" alt="a">
+                    <div class="card-body">
+                        <h5 class="card-title">Planta 2</h5>
+                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat earum libero a cupiditate fuga omnis, maiores numquam quibusdam, iusto voluptatum eaque tenetur nemo quaerat aspernatur. Neque repudiandae ab consequatur officia?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/images/planta.jpeg" class="card-img-top img-fluid" alt="a">
+                    <div class="card-body">
+                        <h5 class="card-title">Planta 3</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. At temporibus natus illum aspernatur ipsam eos fugiat labore veritatis recusandae vel sapiente, hic magni a expedita facilis ut ea quia odit?.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+</body>
+</html>
