@@ -15,7 +15,7 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message = "Você precisa estar logado para acessar esta página."
 
-API_KEY = 'sk-CZuC67c9cf191fa4b8981'
+API_KEY = 'sk-D1ZW67c9e55dc06228992'
 
 
 @login_manager.user_loader
