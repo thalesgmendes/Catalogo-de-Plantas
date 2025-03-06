@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Planta</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5B913B;">
+        <a class="navbar-brand" href="#">Eden</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('jardim') }}">Jardins<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Perfil</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ url_for('atualizar_usuario', id=current_user.id) }}">Configurações</a>
+                        <a class="dropdown-item" href="{{ url_for('logout') }}">Sair</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">{{ planta.nome }}</h2>
+
+        <img src="{{ planta.imagem_url }}" class="rounded mx-auto d-block" alt="{{ planta.nome }}" style="max-width: 100%; height: auto;">
+
+        <div class="mt-4">
+            <div class="card p-3">
+                <h4>Informações Básicas</h4>
+                <p><strong>Nome Científico:</strong> {{ planta.nome_cientifico }}</p>
+                <p><strong>Água:</strong> {{ planta.agua }}</p>
+                <p><strong>Luz Solar:</strong> {{ planta.luz_solar }}</p>
+                <p><strong>Nível de Cuidado:</strong> {{ planta.nivel_cuidado }}</p>
+                <p><strong>Tipo de Solo:</strong> {{ planta.tipo_solo }}</p>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <div class="card p-3">
+                <h4>Descrição</h4>
+                <p>{{ planta.descricao or "Descrição não disponível." }}</p>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <div class="card p-3">
+                <h4>Características</h4>
+                <p><strong>Ciclo de Vida:</strong> {{ planta.ciclo_vida or "Não disponível." }}</p>
+                <p><strong>Tamanho Médio:</strong> {{ planta.tamanho_medio or "Não disponível." }}</p>
+                <p><strong>Toxicidade:</strong> {{ planta.toxicidade or "Não disponível." }}</p>
+                <p><strong>Temperatura Ideal:</strong> {{ planta.temperatura_ideal or "Não disponível." }}</p>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <div class="card p-3">
+                <h4>Dicas de Cultivo</h4>
+                <p>{{ planta.dicas_cultivo or "Dicas de cultivo não disponíveis." }}</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('jardim') }}" class="btn btn-primary">Voltar ao Jardim</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
