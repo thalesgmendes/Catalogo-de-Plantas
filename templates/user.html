@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Jardim</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5B913B;">
+        <a class="navbar-brand" href="#">Eden</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('jardim') }}">Jardins<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Perfil</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ url_for('atualizar_usuario', id=current_user.id) }}">Configurações</a>
+                        <a class="dropdown-item" href="{{ url_for('logout') }}">Sair</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="card p-3">
+            <h3 class="mb-3">MEUS DADOS</h3>
+            <div class="d-flex align-items-center">
+                <div>
+                    <h5>{{ current_user.nome }}</h5>
+                    <p>Email: {{ current_user.email }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 p-3 bg-light text-center">
+            <div class="p-3 mb-2 bg-success text-white">
+                <h4>JARDIM</h4>
+            </div>
+            <button type="button" class="btn btn-success" onclick="window.location.href='{{ url_for('adicionar_planta') }}'">Adicionar Planta</button>
+        </div>
+
+        <!-- Lista de Plantas -->
+        <div class="row mt-3">
+            {% for planta in plantas %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="{{ planta.imagem_url }}" class="card-img-top" alt="{{ planta.nome }}" style="height: 225px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ planta.nome }}</h5>
+                        <p class="card-text">
+                            <strong>Nome Científico:</strong> {{ planta.nome_cientifico }}<br>
+                            <strong>Água:</strong> {{ planta.agua }}<br>
+                            <strong>Luz Solar:</strong> {{ planta.luz_solar }}<br>
+                            <strong>Nível de Cuidado:</strong> {{ planta.nivel_cuidado }}<br>
+                            <strong>Tipo de Solo:</strong> {{ planta.tipo_solo }}
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.location.href='{{ url_for('visualizar_planta', id=planta.id) }}'">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <small class="d-block mb-3 text-muted">&copy; 2025</small>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Contato</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Email: contato@plantas.com</a></li>
+                    <li><a class="text-muted" href="#">Telefone: (11) 1234-5678</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h5>Patrocinadores</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Empresa A</a></li>
+                    <li><a class="text-muted" href="#">Empresa B</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

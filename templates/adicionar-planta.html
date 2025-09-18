@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Planta</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5B913B;">
+    <a class="navbar-brand" href="#">Eden</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('home') }}">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('jardim') }}">Jardins<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Perfil</a>
+          <div class="dropdown-menu">
+              <a class="dropdown-item" href="{{ url_for('atualizar_usuario', id=current_user.id) }}">Configurações</a>
+              <a class="dropdown-item" href="{{ url_for('logout') }}">Sair</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">Adicionar Planta</h2>
+
+    <div class="d-flex justify-content-center mt-4">
+        <form action="/adicionar-planta" method="POST">
+              <div class="form-group">
+                <label for="plantaSelecionada">Escolha uma planta</label>
+                <select class="form-control" id="plantaSelecionada" name="plantaSelecionada" required>
+                    <option value="">Selecione uma planta</option>
+                    {% for planta in plantas %}
+                        <option value="{{ planta.id }}">{{ planta.common_name }}</option>
+                    {% endfor %}
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block mt-2">Adicionar</button>
+          </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
