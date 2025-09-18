@@ -1,0 +1,21 @@
+# Ignorar diretório do JetBrains (IntelliJ, PyCharm, etc.)
+.idea/
+
+# Ignorar arquivos Python compilados
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignorar ambientes virtuais
+.venv/
+venv/
+env/
+instance/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar configurações do sistema
+.DS_Store
+Thumbs.db
